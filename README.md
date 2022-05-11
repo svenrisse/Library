@@ -1,1 +1,1 @@
-# Library
+Library Project from The Odin Project. Goal is to use the newly learned Objects to create a small Library App.
