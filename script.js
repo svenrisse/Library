@@ -5,19 +5,18 @@ let newBook
 
 /* Book constructor */
 class Book {
-    constructor(title, author, read) {
+    constructor(title, author, pages, read) {
         this.title = form.title.value
         this.author = form.author.value
+        this.pages = form.pages.value
         this.read = form.read.checked
     }
 }
 
-harry = new Book("Harry Potter", "Rowling", "read")
-
 /* Function to add a book into myLibrary[] */
 
 function addBookToLibrary() {
-    newBook = new Book(title, author, read)
+    newBook = new Book(title, author, pages, read)
     myLibrary.push(newBook)
     storeLibrary()
     
@@ -25,13 +24,23 @@ function addBookToLibrary() {
 
 /* Open and Close form to get user input */
 
-function openForm() {
-    document.getElementById("popupForm").style.display = "block"
-  }
-function closeForm() {
-    document.getElementById("popupForm").style.display = "none"
-  }
+let modal = document.getElementById("myModal")
+let openButton = document.getElementById("openButton")
+let closeButton = document.getElementById("closeButton")
 
+openButton.onclick = function() {
+    modal.style.display = "block"
+}
+
+closeButton.onclick = function() {
+    modal.style.display = "none"
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none"
+    }
+}
 
 /* function to store library locally to save input data */
 
@@ -65,10 +74,11 @@ function createGrid() {
     }
 }
 
+
 /* */
 restore()
 console.log(myLibrary)
-closeForm()
+
 
 
 

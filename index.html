@@ -9,22 +9,27 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="title">
+        <h1>Library Project</h1>
+    </div>
     <div class="addButton">
-        <button class="openButton" onclick="openForm()">+</button>
+        <button class="openButton" id="openButton">Add a Book</button>
     </div>
 
-    <div class="addBookPopup">
-        <div class="formPopup" id="popupForm">
+    <div class="myModal" id="myModal">
+        <div class="modalContent" id="modalContent">
             <form action="#" class="formContainer" name="form">
                 <h2>Add a new Book</h2>
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" placeholder="..." required>
                 <label for="author">Author</label>
                 <input type="text" name="author" id="author" placeholder="..." required>
+                <label for="pages">Pages</label>
+                <input type="number" name="pages" id="pages" placeholder="...">
                 <label for="read">Read?</label>
                 <input type="checkbox" name="read" id="read">
-                <button type="submit" class="submitButton" onclick="addBookToLibrary();closeForm()">Add Book</button>
-                <button type="button" class="cancelButton" onclick="closeForm()">Close</button>
+                <button type="submit" class="submitButton" onclick="addBookToLibrary()">Add Book</button>
+                <button type="button" class="closeButton" id="closeButton">Close</button>
             </form>
         </div>
     </div>
