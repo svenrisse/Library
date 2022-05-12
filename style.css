@@ -1,5 +1,5 @@
 body {
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     display: grid;
     justify-items: center;
     background-color: #6a9fa5;
@@ -10,22 +10,66 @@ body {
 }
 
 .openButton {
-    back
+    height: 4vh;
+    width: 12vh;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-bottom: 10vh;
 }
 /* Book Layout */
 
 .bookContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .bookContainer .block {
-    height: 30px;
-    width: 30px;
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 25px;
+    height: 300px;
+    width: 234px;
+    padding: 15px;
+    margin: 20px;
+    background-color: #fbd082;
 }
 
+.bookTitle {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;    
+}
+
+.bookAuthor {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.bookPages {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.readButton {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.deleteBook {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    background-color: #ef4444;   
+}
+/* Modal Input Form */
 
 .myModal {
     display: none; 
@@ -40,8 +84,6 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Modal Input Form */
-
 .modalContent {
     background-color: #d9f99d;
     margin: 15% auto;
@@ -53,6 +95,8 @@ body {
     display: grid;
     justify-items: center;
     text-align: center;
+    animation-name: animatetop;
+    animation-duration: 0.5s;
 }
 
 .formContainer {
@@ -72,7 +116,13 @@ body {
 }
 
 .formContainer button {
-    width: 8vw;
-    height: 3vw;
+    width: 5vw;
+    height: 2vw;
+    border-radius: 15px;
 }
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
 
