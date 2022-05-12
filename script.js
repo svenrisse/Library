@@ -46,11 +46,11 @@ function storeLibrary() {
 
 function restore() {
     let objects = localStorage.getItem('myLibrary') 
-    if (!!myLibrary) {
+    if (Array.isArray(myLibrary) && myLibrary.length) {
+        console.log("mylibrary not empty")
+    } else {
         objects = JSON.parse(objects);
         myLibrary = objects;
-    } else {
-        console.log("wrong")
     }
     
 }
